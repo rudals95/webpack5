@@ -1,0 +1,30 @@
+/*!*****************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/index.css ***!
+  \*****************************************************************/
+.dog {
+  background: url(asset/resource/dog.jpg) no-repeat center / 100%;
+  width: 40px;
+  height: 40px;
+}
+.cat {
+  background: url(asset/resource/cat.png) no-repeat center / 100%;
+  width: 40px;
+  height: 40px;
+}
+
+.dog2 {
+  background: url(asset/resource/dog2.png) no-repeat center / 100%;
+  width: 40px;
+  height: 40px;
+}
+.cat2 {
+  background: url(asset/resource/cat.svg) no-repeat center / 100%;
+  width: 40px;
+  height: 40px;
+}
+.phone {
+  background: url(asset/resource/phone.png) no-repeat center / 100%;
+  width: 40px;
+  height: 40px;
+}
+
