@@ -1,4 +1,4 @@
-.dog {
+/* .dog {
   background: url("./images/dog.jpg") no-repeat center / 100%;
   width: 40px;
   height: 40px;
@@ -23,4 +23,22 @@
   background: url("./images/phone.png") no-repeat center / 100%;
   width: 40px;
   height: 40px;
+} */
+
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+ul {
+  width: 200px;
+  border: 1px solid;
+  margin: 0 auto;
+}
+li {
+  border-bottom: 1px solid;
+  height: 30px;
 }
