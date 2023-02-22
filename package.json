@@ -32,6 +32,7 @@
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
+    "react-beautiful-dnd": "^13.1.1",
     "webpack-dev-server": "^4.11.1"
   }
 }
