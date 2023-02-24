@@ -127,16 +127,155 @@ const Test = () => {
   // };
   // solution("my_string");
 
-  const solution = (a) => {
-    console.log(a.filter((c, i) => c % 2));
-    console.log(a.filter((c, i) => c % 2 == 0));
+  // const solution = (num_list) => {
+  //   num_list.reduce(
+  //     (acc, v) => {
+  //       console.log(acc, v, "dd");
+  //       acc[v % 2 === 0 ? 0 : 1] += 1;
+  //       //짝수면 [0,] 홀수 [,1]  //짝2 홀3
+  //       return acc;
+  //     },
+  //     [0, 0]
+  //   );
+  // };
+  // solution([1, 2, 3, 4, 5]);
 
-    // a.filter((c, i) => c % 2 == 0);
-    a.map((c) => {
-      return console.log(c % 2);
+  // const solution = (my_string, n) => {
+  //   [...my_string].map((a) => a.repeat(n)).join("");
+
+  //   console.log([...my_string].map((c) => c.repeat(n)).join(""));
+  //   console.log(
+  //     my_string
+  //       .split("")
+  //       .map((c) => c.repeat(n))
+  //       .join("")
+  //   );
+  // };
+  // solution("hello", 3);
+
+  // const solution = (my_string, letter) => {
+  //   console.log([...my_string].filter((c) => c !== letter).join(""));
+  //   console.log(my_string.replaceAll(letter, ""));
+  //   console.log(my_string.split(letter));
+
+  // };
+  // solution("abcdeff", "f");
+
+  // const solution = (numbers) => {
+  //   console.log(numbers.map((c) => c * 2));
+  //   console.log(numbers.reduce((a, b) => [...a, b * 2], []));
+  // };
+  // solution([1, 2, 3, 4, 5]);
+
+  // const solution = (my_string) => {
+  //   const arr = [];
+  //   [...my_string].map((c) => {
+  //     if (c === c.toUpperCase()) arr.push(c.toLowerCase());
+  //     else arr.push(c.toUpperCase());
+  //   });
+  //   return arr.join("");
+  // };
+
+  // solution("cccCCC");
+  // solution("abCdEfghIJ");
+
+  // const solution = (n, numlist) => {
+  //   numlist.filter((c, i) => {
+  //     console.log(c);
+  //   });
+  //   console.log(numlist.filter((c, i) => c % n === 0));
+  // };
+  // solution(3, [4, 5, 6, 7, 8, 9, 10, 11, 12]);
+
+  // const solution = (my_string, num1, num2) => {
+  //   console.log([...my_string]);
+  //   // console.log([...my_string].replace("h", "s"));
+  // };
+  // solution("hello", 1, 2);
+
+  // const solution = (quiz) => {
+  //   // 배열 맵 반복 > 스플릿 = 등호 삭제 한 것을 구조 분해 할당 > Eval( a 문자 연산)
+  //   // a와 === b 삼항연산
+  //   let res = [];
+  //   quiz.map((c) => {
+  //     const [a, b] = c.split("=");
+  //     console.log(a, b);
+  //     console.log(eval(a) === Number(b));
+  //     res.push(eval(a) === Number(b) ? "O" : "X");
+  //   });
+  //   return res;
+  // };
+  // solution(["19 - 6 = 13", "5 + 66 = 71", "5 - 15 = 63", "3 - 1 = 2"]);
+
+  // const solution = (num, k) =>  [...String(num)].includes(String(k)) ? [...String(num)].indexOf(String(k)) + 1 : -1
+  // //num 속 k 있는지 확인 있다면 indexOf(k)
+  // solution(29183, 1);
+  // solution(232443, 4);
+  // solution(123456, 7);
+
+  //배열 중복값 제거시엔 set
+  // const solution = (my_string) => {
+  //   const set = new Set(my_string);
+  //   return [...set].join("");
+  // };
+  // solution("We are the world");
+
+  // const solution = (slice, n) => {
+  //   console.log(Math.ceil(n / slice));
+  // };
+  // solution(7, 10);
+
+  // const solution = (array) => {
+  //   const arr = Math.max(...array);
+  //   console.log([Math.max(...array), array.indexOf(arr)]);
+  //   return [Math.max(array), array.indexOf(arr)];
+  // };
+  // solution([1, 8, 3]);
+
+  // const solution = (my_string, num1, num2) => {
+  //   const res = [...my_string];
+  //   res.splice(num1, 1, my_string[num2]);
+  //   res.splice(num2, 1, my_string[num1]);
+  //   return res.join("");
+  // };
+  // solution("hello", 1, 2);
+
+  // const solution = (n) => {
+  //   let pizzaBox = 6;
+  //   // 같은 수로 나눠질 때까지 +6
+  //   while (pizzaBox % n !== 0) {
+  //     pizzaBox += 6;
+  //   }
+  //   return console.log(pizzaBox / 6);
+  // };
+  // solution(6);
+  // solution(10);
+
+  const solution = (id_pw, db) => {
+    db.map((c) => {
+      // console.log(c, c[0], c[1], "분해");
+      // console.log(c.includes(id_pw[0]), "아이디검사");
+      // console.log(c.includes(id_pw[1]), "비번검사");
+      // console.log(c.includes(id_pw[0]) && c.includes(id_pw[1]) ? "login" : c.includes(id_pw[0]) && c.includes(id_pw[1]) === false ? "wrong pw" : "fail");
+      return c.includes(id_pw[0]) && c.includes(id_pw[1]) ? "login" : c.includes(id_pw[0]) && c.includes(id_pw[1]) === false ? "wrong pw" : "fail";
     });
   };
-  solution([1, 2, 3, 4, 5]);
+  solution(
+    ["meosseugi", "1234"],
+    [
+      ["rardss", "123"],
+      ["yyoom", "1234"],
+      ["meosseugi", "1234"],
+    ]
+  );
+  solution(
+    ["programmer01", "15789"],
+    [
+      ["programmer02", "111111"],
+      ["programmer00", "134"],
+      ["programmer01", "1145"],
+    ]
+  );
 
   return (
     <>
