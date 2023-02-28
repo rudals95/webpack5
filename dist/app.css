@@ -1,30 +1,68 @@
 /*!*****************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/index.css ***!
   \*****************************************************************/
-.dog {
-  background: url(asset/resource/dog.jpg) no-repeat center / 100%;
+/* .dog {
+  background: url("./images/dog.jpg") no-repeat center / 100%;
   width: 40px;
   height: 40px;
 }
 .cat {
-  background: url(asset/resource/cat.png) no-repeat center / 100%;
+  background: url("./images/cat.png") no-repeat center / 100%;
   width: 40px;
   height: 40px;
 }
 
 .dog2 {
-  background: url(asset/resource/dog2.png) no-repeat center / 100%;
+  background: url("./images/dog2.png") no-repeat center / 100%;
   width: 40px;
   height: 40px;
 }
 .cat2 {
-  background: url(asset/resource/cat.svg) no-repeat center / 100%;
+  background: url("./images/cat.svg") no-repeat center / 100%;
   width: 40px;
   height: 40px;
 }
 .phone {
-  background: url(asset/resource/phone.png) no-repeat center / 100%;
+  background: url("./images/phone.png") no-repeat center / 100%;
   width: 40px;
   height: 40px;
+} */
+
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+ul {
+  text-align: center;
+  width: 200px;
+  border: 1px solid;
+  margin: 0 auto;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+li {
+  transition: 0.2s all ease-in-out;
+  border-bottom: 1px solid;
+  height: 30px;
+  background: #dae5df;
+  width: 100%;
+  transform: scale(1);
+}
+
+.over {
+  transform: scale(1.2);
+}
+
+.test2 {
+  border: 1px solid;
+  width: 40px;
+  height: 40px;
+  background: #fff;
 }
 

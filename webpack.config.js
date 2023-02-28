@@ -88,7 +88,7 @@ module.exports = {
     devMiddleware: { publicPath: "/dist" },
     static: { directory: path.resolve(__dirname, "dist") },
     hot: true,
-    port: 3000,
+    port: 3001,
     historyApiFallback: true,
     proxy: {
       "/api": "http://localhost:8080",

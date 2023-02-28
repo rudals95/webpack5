@@ -41,6 +41,9 @@ const Test = () => {
       ...remainingItems.slice(draggedTo),
     ];
 
+    // console.log(draggedFrom, "시작점");
+    // console.log(draggedTo, "도착점");
+
     if (draggedTo !== dragAndDrop.draggedTo) {
       // 놓을 수 있는 영역이 변경 되면 객체를 변경해줌
       setDragAndDrop({
@@ -51,6 +54,31 @@ const Test = () => {
     }
   };
   const onDrop = (e) => {
+    const draggedFrom = dragAndDrop.draggedFrom; //드래그 시작때 찍은 값
+    const draggedTo = parseInt(e.currentTarget.dataset.position); // 부딪히는타겟 인덱스
+    let newList = dragAndDrop.originalOrder; //오리지날리스트
+    const itemDragged = newList[draggedFrom];
+
+    const remainingItems = newList.filter((item, index) => index !== draggedFrom); //클릭한 인덱스랑 복사한 오리지날배열속 인덱스 다른것 반환
+
+    console.log(draggedFrom, "시작점");
+    console.log(draggedTo, "도착점");
+    console.log(itemDragged, "시작점에서 가져온거");
+
+    const test = [...remainingItems.slice(0, draggedTo)];
+
+    console.log(remainingItems, " 데이터");
+    console.log(test, "테스트 데이터");
+    // itemDragged,
+    // ...remainingItems.slice(draggedTo),
+
+    // newList = [
+    //   // 드래그 시작, 끝 인덱스를 활용해 새로운 배열로 반환해줌
+    //   ...remainingItems.slice(0, draggedTo),
+    //   itemDragged,
+    //   ...remainingItems.slice(draggedTo),
+    // ];
+
     setList(dragAndDrop.updatedOrder);
     setDragAndDrop({
       ...dragAndDrop,
@@ -67,7 +95,6 @@ const Test = () => {
     e.currentTarget.classList.remove("over");
   };
   const onDragEnd = (e) => {
-    console.log(e.currentTarget);
     e.currentTarget.style.opacity = "1";
     const listItens = document.querySelectorAll(".draggable");
     listItens.forEach((item) => {
@@ -251,32 +278,6 @@ const Test = () => {
   // solution(6);
   // solution(10);
 
-  const solution = (id_pw, db) => {
-    db.map((c) => {
-      // console.log(c, c[0], c[1], "분해");
-      // console.log(c.includes(id_pw[0]), "아이디검사");
-      // console.log(c.includes(id_pw[1]), "비번검사");
-      // console.log(c.includes(id_pw[0]) && c.includes(id_pw[1]) ? "login" : c.includes(id_pw[0]) && c.includes(id_pw[1]) === false ? "wrong pw" : "fail");
-      return c.includes(id_pw[0]) && c.includes(id_pw[1]) ? "login" : c.includes(id_pw[0]) && c.includes(id_pw[1]) === false ? "wrong pw" : "fail";
-    });
-  };
-  solution(
-    ["meosseugi", "1234"],
-    [
-      ["rardss", "123"],
-      ["yyoom", "1234"],
-      ["meosseugi", "1234"],
-    ]
-  );
-  solution(
-    ["programmer01", "15789"],
-    [
-      ["programmer02", "111111"],
-      ["programmer00", "134"],
-      ["programmer01", "1145"],
-    ]
-  );
-
   return (
     <>
       <div>
@@ -302,7 +303,7 @@ const Test = () => {
         </ul>
       </div>
 
-      <DragDropContext onDragEnd={handleChange}>
+      {/* <DragDropContext onDragEnd={handleChange}>
         <Droppable droppableId="todos">
           {(provided) => (
             <ul className="todos" {...provided.droppableProps} ref={provided.innerRef}>
@@ -319,7 +320,7 @@ const Test = () => {
             </ul>
           )}
         </Droppable>
-      </DragDropContext>
+      </DragDropContext> */}
     </>
   );
 };
